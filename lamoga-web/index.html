@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lamoga | Diseño de Modas y Mantenimiento Industrial Textil - Ecuador</title>
+    
+    <!-- Lequire DEMO Font -->
+    <link href="https://fonts.cdnfonts.com/css/lequire" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/lequire');
+        
+        :root {
+            --morado-primario: #7B3FA0;
+            --morado-claro: #9B59B6;
+            --morado-oscuro: #5B2C6F;
+            --morado-gradiente: linear-gradient(135deg, #7B3FA0 0%, #9B59B6 100%);
+            --blanco: #FFFFFF;
+            --gris-claro: #F5F5F5;
+            --gris-oscuro: #2C3E50;
+            --negro: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+            overflow-x: hidden;
+        }
+
+        .lequire-font {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            letter-spacing: 2px;
+            text-transform: lowercase;
+        }
+
+        /* Navegación */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 20px rgba(123,63,160,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--morado-primario);
+            text-decoration: none;
+            letter-spacing: 4px;
+            text-transform: lowercase;
+        }
+
+        .logo span {
+            color: var(--morado-claro);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gris-oscuro);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--morado-primario);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.3rem;
+            color: var(--morado-primario);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--morado-primario);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 80px;
+            background: var(--morado-gradiente);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            font-size: 5rem;
+            color: white;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 1rem;
+            letter-spacing: 5px;
+            text-transform: lowercase;
+        }
+
+        .hero-content .subtitle {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: lowercase;
+        }
+
+        .hero-content p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--morado-primario);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            margin-left: 1rem;
+        }
+
+        .btn-whatsapp.soporte {
+            background: #128C7E;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        /* Servicios */
+        .services {
+            padding: 6rem 5%;
+            background: var(--gris-claro);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            font-size: 2.8rem;
+            color: var(--morado-primario);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--morado-gradiente);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            color: var(--morado-oscuro);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-transform: lowercase;
+        }
+
+        .linea-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .linea-diseno {
+            background: #E8D5F2;
+            color: #7B3FA0;
+        }
+
+        .linea-soporte {
+            background: #D5F2E8;
+            color: #128C7E;
+        }
+
+        /* Tienda */
+        .shop {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .shop-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--morado-primario);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .product-badge.sale {
+            background: #e74c3c;
+        }
+
+        .product-image {
+            height: 280px;
+            background: var(--gris-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.8rem;
+        }
+
+        .product-category {
+            color: var(--morado-claro);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .product-title {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            text-transform: lowercase;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            color: var(--morado-primario);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .product-price .original {
+            font-size: 0.9rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        .product-price .discount {
+            background: #e74c3c;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+
+        .precio-convenir {
+            font-size: 1.1rem;
+            color: var(--morado-primario);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            background: var(--morado-gradiente);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-cotizar {
+            width: 100%;
+            background: var(--morado-gradiente);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* About */
+        .about {
+            padding: 6rem 5%;
+            background: var(--morado-gradiente);
+            color: white;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: lowercase;
+        }
+
+        .slogan-box {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            border-left: 4px solid white;
+        }
+
+        .slogan-box p {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            font-size: 1.1rem;
+            text-transform: lowercase;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            font-size: 2.5rem;
+        }
+
+        /* Contacto */
+        .contact {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            color: var(--morado-primario);
+            font-size: 1.8rem;
+            text-transform: lowercase;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--gris-claro);
+            border-radius: 12px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--morado-gradiente);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: var(--gris-claro);
+            padding: 2.5rem;
+            border-radius: 20px;
+        }
+
+        .contact-form h3 {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            color: var(--morado-primario);
+            font-size: 1.5rem;
+            text-transform: lowercase;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-btn.diseno { background: #25D366; }
+        .whatsapp-btn.soporte { background: #128C7E; }
+
+        /* Footer */
+        footer {
+            background: var(--negro);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            color: var(--morado-claro);
+            text-transform: lowercase;
+        }
+
+        /* Modales */
+        .cart-modal, .checkout-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: flex-end;
+        }
+
+        .checkout-modal {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-content, .checkout-content {
+            background: white;
+            padding: 2rem;
+            max-width: 450px;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .checkout-content {
+            max-width: 600px;
+            height: auto;
+            max-height: 90vh;
+            border-radius: 20px;
+        }
+
+        .checkout-content h2 {
+            font-family: 'Lequire', 'Lequire DEMO', sans-serif;
+            color: var(--morado-primario);
+            text-transform: lowercase;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .payment-method {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .payment-method.active {
+            border-color: var(--morado-primario);
+        }
+
+        .btn-checkout {
+            width: 100%;
+            background: var(--morado-gradiente);
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* RIMPE Badge */
+        .rimpe-badge {
+            background: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--morado-primario);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            display: none;
+            z-index: 4000;
+        }
+
+        @media (max-width: 968px) {
+            .hero-container, .about-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 { font-size: 3rem; }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">la<span>moga</span></a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#tienda">Tienda</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>lamoga</h1>
+                <div class="subtitle">diseño de modas & mantenimiento industrial</div>
+                <p>Especialistas en diseño personalizado, patronaje digital y mantenimiento de equipos industriales. 28 años de experiencia en Ecuador.</p>
+                <div>
+                    <a href="#tienda" class="btn btn-primary">Ver Tienda</a>
+                    <a href="https://wa.me/593958844426" class="btn btn-whatsapp">Diseño</a>
+                    <a href="https://wa.me/593999862501" class="btn btn-whatsapp soporte">Soporte</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/descarga (37).jpg" alt="lamoga diseño de modas">
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services" id="servicios">
+        <div class="section-title">
+            <h2>nuestros servicios</h2>
+            <p>Soluciones integrales para el sector textil en Ecuador</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="linea-tag linea-diseno">Línea Diseño</span>
+                <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+                <h3>diseño de modas</h3>
+                <p>Creación de colecciones únicas y personalizadas.</p>
+            </div>
+            <div class="service-card">
+                <span class="linea-tag linea-diseno">Línea Diseño</span>
+                <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                <h3>patronaje digital</h3>
+                <p>Patrones precisos y escalado profesional.</p>
+            </div>
+            <div class="service-card">
+                <span class="linea-tag linea-soporte">Línea Soporte</span>
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h3>mantenimiento industrial</h3>
+                <p>Soporte técnico especializado 24/7.</p>
+            </div>
+            <div class="service-card">
+                <span class="linea-tag linea-soporte">Línea Soporte</span>
+                <div class="service-icon"><i class="fas fa-print"></i></div>
+                <h3>consumibles</h3>
+                <p>Cartuchos OEM y repuestos originales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tienda -->
+    <section class="shop" id="tienda">
+        <div class="section-title">
+            <h2>tienda online</h2>
+            <p>Productos profesionales con envío a todo Ecuador</p>
+        </div>
+        <div class="shop-grid">
+            
+            <!-- ========================================== -->
+            <!-- LÍNEA DISEÑO (PRIMERO) - 4 PRODUCTOS -->
+            <!-- ========================================== -->
+            
+            <!-- Producto 1: Diseño de Colección (LÍNEA DISEÑO) -->
+            <div class="product-card">
+                <span class="product-badge">Popular</span>
+                <div class="product-image">
+                    <img src="images/descarga (37).jpg" alt="Diseño Colección">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Línea Diseño</span>
+                    <h3 class="product-title">diseño de colección (6 piezas)</h3>
+                    <p>Creación completa: moodboard, fichas técnicas, patrones digitales y prototipo.</p>
+                    <div class="precio-convenir">Precios a convenir</div>
+                    <a href="https://wa.me/593958844426" class="btn-cotizar">
+                        <i class="fab fa-whatsapp"></i> Solicitar Cotización
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 2: Patronaje Digital (LÍNEA DISEÑO) -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Create.jpg" alt="Patronaje Digital">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Línea Diseño</span>
+                    <h3 class="product-title">patronaje digital básico</h3>
+                    <p>Desarrollo de patrón digital completo con escalado en tallas. Incluye archivo digital.</p>
+                    <div class="precio-convenir">Precios a convenir</div>
+                    <a href="https://wa.me/593958844426" class="btn-cotizar">
+                        <i class="fab fa-whatsapp"></i> Solicitar Cotización
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 3: Escalado Industrial (LÍNEA DISEÑO) -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Google.jpg" alt="Escalado Industrial">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Línea Diseño</span>
+                    <h3 class="product-title">escalado industrial completo</h3>
+                    <p>Escalado de patrón base a tabla de tallas completa (XS-XXL). Optimizado para producción.</p>
+                    <div class="precio-convenir">Precios a convenir</div>
+                    <a href="https://wa.me/593958844426" class="btn-cotizar">
+                        <i class="fab fa-whatsapp"></i> Solicitar Cotización
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 4: Consultoría Textil (LÍNEA DISEÑO) -->
+            <div class="product-card">
+                <span class="product-badge">Nuevo</span>
+                <div class="product-image">
+                    <img src="images/descarga (36).jpg" alt="Consultoría Textil">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Línea Diseño</span>
+                    <h3 class="product-title">consultoría textil 2 horas</h3>
+                    <p>Asesoría especializada en procesos de producción, optimización de recursos y calidad.</p>
+                    <div class="precio-convenir">Precios a convenir</div>
+                    <a href="https://wa.me/593958844426" class="btn-cotizar">
+                        <i class="fab fa-whatsapp"></i> Solicitar Cotización
+                    </a>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- LÍNEA SOPORTE (AL FINAL) - 2 PRODUCTOS -->
+            <!-- ========================================== -->
+            
+            <!-- Producto 5: Cartucho 51645A Negro (LÍNEA SOPORTE - CON PRECIO) -->
+            <div class="product-card">
+                <span class="product-badge sale">Oferta -15%</span>
+                <div class="product-image">
+                    <img src="images/toner 45A.png" alt="Cartucho 51645A" style="object-fit: contain; background: white; padding: 20px;">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Línea Soporte</span>
+                    <h3 class="product-title">cartucho 51645a negro</h3>
+                    <p>Original OEM 42ml para plotters industriales.</p>
+                    <div class="product-price">
+                        $55.00 <span class="original">$65.00</span>
+                    </div>
+                    <button class="btn-add-cart" onclick="addToCart('Cartucho 51645A Negro', 55)">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 6: Mantenimiento Preventivo Plotter (LÍNEA SOPORTE - CON PRECIO) -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/tecnico plotter.JPG" alt="Mantenimiento Plotter">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Línea Soporte</span>
+                    <h3 class="product-title">mantenimiento preventivo plotter</h3>
+                    <p>Revisión completa, limpieza, calibración y ajustes. Servicio a domicilio en Quito.</p>
+                    <div class="product-price">$150.00</div>
+                    <button class="btn-add-cart" onclick="addToCart('Mantenimiento Preventivo Plotter', 150)">
+                        <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="about" id="nosotros">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>sobre lamoga</h2>
+                <p>Profesionales especializados en Diseño de Modas y Mantenimiento de Equipos Textiles.</p>
+                <div class="slogan-box">
+                    <p>"eleva tus diseños al siguiente nivel"</p>
+                </div>
+                <div class="slogan-box">
+                    <p>"no esperes a que tu producción se detenga"</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item"><span class="stat-number">28+</span><span>Años</span></div>
+                    <div class="stat-item"><span class="stat-number">500+</span><span>Proyectos</span></div>
+                    <div class="stat-item"><span class="stat-number">100%</span><span>Satisfacción</span></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/tecnico plotter.JPG" alt="lamoga">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+        <div class="section-title">
+            <h2>contacto</h2>
+            <p>Estamos listos para ayudarte</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>información de contacto</h3>
+                <div class="contact-item">
+                    <div class="contact-icon" style="background: #25D366;"><i class="fab fa-whatsapp"></i></div>
+                    <div>
+                        <h4>Diseño de Modas</h4>
+                        <p>+593 95 884 4426</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon" style="background: #128C7E;"><i class="fas fa-tools"></i></div>
+                    <div>
+                        <h4>Soporte Técnico</h4>
+                        <p>+593 999 862 501</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>lamoga.ecuador@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>envíanos un mensaje</h3>
+                <form onsubmit="event.preventDefault(); alert('Mensaje enviado!');">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>lamoga</h4>
+                <p>Diseño de Modas & Mantenimiento Industrial</p>
+            </div>
+            <div class="footer-section">
+                <h4>línea diseño</h4>
+                <p><a href="https://wa.me/593958844426">+593 95 884 4426</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>línea soporte</h4>
+                <p><a href="https://wa.me/593999862501">+593 999 862 501</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>email</h4>
+                <p>lamoga.ecuador@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 lamoga Ecuador</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/593958844426" class="whatsapp-btn diseno" title="Diseño"><i class="fas fa-tshirt"></i></a>
+        <a href="https://wa.me/593999862501" class="whatsapp-btn soporte" title="Soporte"><i class="fas fa-tools"></i></a>
+    </div>
+
+    <!-- Carrito Modal -->
+    <div class="
